@@ -26,3 +26,4 @@ So go ahead an [grab a plugin manager][plugin-managers] or
 [prezto]:          https://github.com/sorin-ionescu/prezto
 [plugin-managers]: https://github.com/unixorn/awesome-zsh-plugins#frameworks
 [zsh_unplugged]:   https://github.com/mattmc3/zsh_unplugged
+[zshzoo]:          https://github.com/zshzoo
