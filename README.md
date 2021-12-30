@@ -22,6 +22,56 @@ stitch together to build your own ideal Zsh configuration without needing a fram
 So go ahead an [grab a plugin manager][plugin-managers] or
 [go without one][zsh_unplugged] and build your own Zsh config.
 
+## Getting started
+
+If you want to get started using ZshZoo to compose a powerful and ultra-fast Zsh config,
+you can start by adding something like this to your `${ZDOTDIR:-~}/.zshrc`:
+
+```zsh
+# let's use zsh_unplugged to load our plugins
+ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-~/.config/zsh}/plugins}
+[[ -d $ZPLUGINDIR/zsh_unplugged ]] \
+  || git clone https://github.com/mattmc3/zsh_unplugged $ZPLUGINDIR/zsh_unplugged
+source $ZPLUGINDIR/zsh_unplugged/zunplugged.zsh
+
+# make your Zsh plugins list
+plugins=(
+  # load these first
+  sindresorhus/pure
+  romkatv/zsh-defer
+
+  # ZshZoo plugins
+  zshzoo/setopts
+  zshzoo/history
+  zshzoo/keybindings
+  zshzoo/zstyle-completions
+  zshzoo/copier
+  zshzoo/macos
+  zshzoo/prj
+  zshzoo/magic-enter
+  zshzoo/zfishcmds
+  zshzoo/termtitle
+  zshzoo/zshrc.d
+  zshzoo/zfunctions
+
+  # 3rd party plugins
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-history-substring-search
+  mattmc3/zman
+  olets/zsh-abbr
+  rupa/z
+  rummik/zsh-tailf
+  peterhurford/up.zsh
+
+  # load these last
+  zshzoo/compinit
+  zdharma-continuum/fast-syntax-highlighting
+)
+
+# load your plugins
+plugin-load $plugins
+```
+
 [oh-my-zsh]:       https://github.com/ohmyzsh/ohmyzsh
 [prezto]:          https://github.com/sorin-ionescu/prezto
 [plugin-managers]: https://github.com/unixorn/awesome-zsh-plugins#frameworks
