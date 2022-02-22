@@ -36,9 +36,8 @@ source $ZPLUGINDIR/zsh_unplugged/unplugged.zsh
 
 # make your Zsh plugins list
 plugins=(
-  # load these first
+  # prompt
   sindresorhus/pure
-  romkatv/zsh-defer
 
   # ZshZoo plugins
   zshzoo/setopts
@@ -58,7 +57,6 @@ plugins=(
   zsh-users/zsh-autosuggestions
   zsh-users/zsh-history-substring-search
   mattmc3/zman
-  olets/zsh-abbr
   rupa/z
   rummik/zsh-tailf
   peterhurford/up.zsh
@@ -66,6 +64,10 @@ plugins=(
   # load these last
   zshzoo/compinit
   zdharma-continuum/fast-syntax-highlighting
+
+  # finally, load deferred plugins
+  romkatv/zsh-defer
+  olets/zsh-abbr
 )
 
 # load your plugins
