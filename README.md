@@ -32,7 +32,7 @@ you can start by adding something like this to your `${ZDOTDIR:-~}/.zshrc`:
 ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-~/.config/zsh}/plugins}
 [[ -d $ZPLUGINDIR/zsh_unplugged ]] \
   || git clone https://github.com/mattmc3/zsh_unplugged $ZPLUGINDIR/zsh_unplugged
-source $ZPLUGINDIR/zsh_unplugged/zunplugged.zsh
+source $ZPLUGINDIR/zsh_unplugged/unplugged.zsh
 
 # make your Zsh plugins list
 plugins=(
