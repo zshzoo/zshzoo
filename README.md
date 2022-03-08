@@ -28,50 +28,48 @@ If you want to get started using ZshZoo to compose a powerful and ultra-fast Zsh
 you can start by adding something like this to your `${ZDOTDIR:-~}/.zshrc`:
 
 ```zsh
+# .zshrc
+
 # let's use zsh_unplugged to load our plugins
-ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-~/.config/zsh}/plugins}
+ZPLUGINDIR=${ZDOTDIR:-~}/.zplugins
 [[ -d $ZPLUGINDIR/zsh_unplugged ]] \
   || git clone https://github.com/mattmc3/zsh_unplugged $ZPLUGINDIR/zsh_unplugged
 source $ZPLUGINDIR/zsh_unplugged/unplugged.zsh
 
 # make your Zsh plugins list
-plugins=(
+repos=(
   # prompt
   sindresorhus/pure
 
+  # zsh framework
+  mattmc3/zephyr
+
   # ZshZoo plugins
-  zshzoo/setopts
-  zshzoo/history
-  zshzoo/keybindings
-  zshzoo/zstyle-completions
   zshzoo/copier
   zshzoo/macos
-  zshzoo/prj
   zshzoo/magic-enter
-  zshzoo/zfishcmds
-  zshzoo/termtitle
   zshzoo/zshrc.d
   zshzoo/zfunctions
 
   # 3rd party plugins
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-completions
   mattmc3/zman
   rupa/z
   rummik/zsh-tailf
   peterhurford/up.zsh
 
-  # load these last
-  zshzoo/compinit
-  zdharma-continuum/fast-syntax-highlighting
+  # load these at the end
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-autosuggestions
 
   # finally, load deferred plugins
   romkatv/zsh-defer
   olets/zsh-abbr
+  zdharma-continuum/fast-syntax-highlighting
 )
 
 # load your plugins
-plugin-load $plugins
+plugin-load $repos
 ```
 
 [oh-my-zsh]:       https://github.com/ohmyzsh/ohmyzsh
